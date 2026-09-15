@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c73ajal2y06qf"]
+
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_b5him"]
+[ext_resource type="Texture2D" uid="uid://ds5m61fkq4qx8" path="res://New Piskel-1.png (7) (1).png" id="2_b5him"]
+
+[sub_resource type="Animation" id="Animation_y2ey3"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_b5him"]
+resource_name = "fire_dance"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.050000004, 0, 0, 0, 2, -0.05555556, 0, 0, 0, 3, -0.045, 0, 0, 0, 0, -0.062222213, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.12, 0.25, 0.37)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y2ey3"]
+_data = {
+&"RESET": SubResource("Animation_y2ey3"),
+&"fire_dance": SubResource("Animation_b5him")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oufq8"]
+size = Vector2(161, 160)
+
+[node name="campfire" type="Area2D" unique_id=702681586]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_b5him")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=81524240]
+libraries/ = SubResource("AnimationLibrary_y2ey3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2140609679]
+scale = Vector2(10, 10)
+texture = ExtResource("2_b5him")
+hframes = 2
+vframes = 2
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1907247765]
+position = Vector2(-3, 2)
+shape = SubResource("RectangleShape2D_oufq8")

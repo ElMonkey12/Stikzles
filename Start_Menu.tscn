@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cwlj10u1hxytq"]
+
+[ext_resource type="Script" uid="uid://dm74vjnnj2wgq" path="res://start_menu.gd" id="1_pbjr1"]
+[ext_resource type="Texture2D" uid="uid://dvfvxdxsl4ob7" path="res://Untitled presentation (1).png" id="1_wrxjg"]
+
+[node name="Control" type="Control" unique_id=646067327]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 2.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pbjr1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=898126774]
+position = Vector2(576, 318)
+scale = Vector2(1.2141706, 1.1888889)
+texture = ExtResource("1_wrxjg")
+
+[node name="panel contanier" type="PanelContainer" parent="." unique_id=1674083725]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 347.00003
+offset_right = 527.0
+offset_bottom = 387.00003
+scale = Vector2(4.4578605, 2.761504)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel contanier" unique_id=687516811]
+layout_mode = 2
+
+[node name="Plya" type="Button" parent="panel contanier/VBoxContainer" unique_id=343710540]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="panel contanier2" type="PanelContainer" parent="." unique_id=525694295]
+visible = false
+layout_mode = 0
+offset_left = 106.00001
+offset_top = 456.99997
+offset_right = 183.0
+offset_bottom = 519.0
+scale = Vector2(2.3482258, 1.7996991)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="panel contanier2" unique_id=1260881490]
+layout_mode = 2
+
+[node name="Settng" type="Button" parent="panel contanier2/VBoxContainer" unique_id=1879772504]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://busjfb6yuetjg"
+path="res://.godot/imported/Screen Recording 2026-05-19 at 11.55.14 AM.mp3-d3f05c67c79453d8a6c7fa3ca50fc1a7.mp3str"
+
+[deps]
+
+source_file="res://Screen Recording 2026-05-19 at 11.55.14 AM.mp3"
+dest_files=["res://.godot/imported/Screen Recording 2026-05-19 at 11.55.14 AM.mp3-d3f05c67c79453d8a6c7fa3ca50fc1a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

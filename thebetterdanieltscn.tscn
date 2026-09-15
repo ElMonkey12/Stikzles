@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://1lqnajuyq5jr"]
+
+[ext_resource type="PackedScene" uid="uid://cffvpkd34dugb" path="res://slimeball.tscn" id="3_jnym6"]
+[ext_resource type="PackedScene" uid="uid://c73ajal2y06qf" path="res://campfire.tscn" id="4_poloe"]
+[ext_resource type="PackedScene" uid="uid://yyfslvntnvge" path="res://stick.tscn" id="5_37fjs"]
+[ext_resource type="PackedScene" uid="uid://ctq5iq6ywful4" path="res://rope.tscn" id="6_dyl2n"]
+[ext_resource type="PackedScene" uid="uid://ob74usd8801x" path="res://firestarter.tscn" id="7_2k3xf"]
+[ext_resource type="PackedScene" uid="uid://3dj0twil1oog" path="res://hemp.tscn" id="7_7wk53"]
+[ext_resource type="PackedScene" uid="uid://stis62vtriss" path="res://slime_1.tscn" id="8_2lx4a"]
+
+[node name="Daniel" type="Node2D" unique_id=625389600]
+
+[node name="slime_1" parent="." unique_id=163276715 instance=ExtResource("8_2lx4a")]
+position = Vector2(218, 190)
+
+[node name="stick" parent="." unique_id=412336541 instance=ExtResource("5_37fjs")]
+position = Vector2(346, 540)
+
+[node name="rope" parent="." unique_id=1364988887 instance=ExtResource("6_dyl2n")]
+position = Vector2(118, 540)
+
+[node name="firestarter" parent="." unique_id=193386168 instance=ExtResource("7_2k3xf")]
+position = Vector2(830, 486)
+
+[node name="slimeball" parent="." unique_id=960756152 instance=ExtResource("3_jnym6")]
+position = Vector2(454, 384)
+
+[node name="campfire" parent="." unique_id=1563126251 instance=ExtResource("4_poloe")]
+position = Vector2(822, 180)
+
+[node name="hemp" parent="." unique_id=259917386 instance=ExtResource("7_7wk53")]
+
+[connection signal="mouse_entered" from="slime_1" to="slime_1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="slime_1" to="slime_1" method="_on_mouse_exited"]
+[connection signal="renamed" from="slime_1" to="slime_1" method="_on_renamed"]

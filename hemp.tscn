@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://3dj0twil1oog"]
+
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_korhu"]
+[ext_resource type="Texture2D" uid="uid://dpopom61ooigx" path="res://New Piskel-1.png (3)-1.png.png" id="2_korhu"]
+
+[sub_resource type="Animation" id="Animation_korhu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_r0fa0"]
+resource_name = "hemp_sway"
+length = 0.5
+loop_mode = 1
+step = 0.06666667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 2, -0.083333336, 0.33333334, 0, 0, 0, -0.05277778, 0.5, 0, 0, 3, -0.08555555, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.12, 0.25, 0.37)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_30nnb"]
+_data = {
+&"RESET": SubResource("Animation_korhu"),
+&"hemp_sway": SubResource("Animation_r0fa0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0fa0"]
+size = Vector2(162.5, 270)
+
+[node name="hemp" type="Area2D" unique_id=259917386]
+script = ExtResource("1_korhu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=389953924]
+libraries/ = SubResource("AnimationLibrary_30nnb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=545733228]
+scale = Vector2(10, 10)
+texture = ExtResource("2_korhu")
+hframes = 2
+vframes = 2
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1433482378]
+position = Vector2(-4.75, 5)
+shape = SubResource("RectangleShape2D_r0fa0")

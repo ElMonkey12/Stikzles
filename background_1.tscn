@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://eb82o1mpnl3p"]
+
+[ext_resource type="Script" uid="uid://dy1h354sgpnw3" path="res://background_1.gd" id="1_qn0ad"]
+[ext_resource type="Texture2D" uid="uid://ckhivtggv5osr" path="res://background_grasslands.png" id="2_qn0ad"]
+
+[node name="background" type="RigidBody2D"]
+script = ExtResource("1_qn0ad")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(583.5, 324.99997)
+scale = Vector2(18.046875, 10.031251)
+texture = ExtResource("2_qn0ad")

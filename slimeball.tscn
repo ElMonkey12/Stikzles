@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cffvpkd34dugb"]
+
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_7oi3l"]
+[ext_resource type="Texture2D" uid="uid://b1pm62ki715yx" path="res://slimeball.png" id="1_tvkje"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvkje"]
+size = Vector2(11.800003, 12.899994)
+
+[node name="slimeball" type="Area2D" unique_id=127979994]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_7oi3l")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=696856226]
+position = Vector2(1, 0.5)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_tvkje")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2035252473]
+scale = Vector2(10, 10)
+texture = ExtResource("1_tvkje")

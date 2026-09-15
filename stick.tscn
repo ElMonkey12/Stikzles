@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://yyfslvntnvge"]
+
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_1hssm"]
+[ext_resource type="Texture2D" uid="uid://brl0bsv5t87pt" path="res://stick.png" id="1_agfe5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agfe5"]
+size = Vector2(13.800001, 14.600006)
+
+[node name="stick" type="Area2D" unique_id=2031204898]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_1hssm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=726502903]
+scale = Vector2(10, 10)
+texture = ExtResource("1_agfe5")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1279819774]
+position = Vector2(2.999993, 3)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_agfe5")

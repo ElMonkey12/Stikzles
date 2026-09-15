@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3yo8d1d7r13b"]
+
+[ext_resource type="Script" uid="uid://b1c3o6dk7vjxo" path="res://hitbox.gd" id="1_e2fdc"]
+[ext_resource type="Texture2D" uid="uid://uwk4yddrqler" path="res://Sunflower.png" id="1_oiv3v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2g1xv"]
+size = Vector2(162.5, 270)
+
+[node name="sunflower" type="Area2D" unique_id=70406636]
+script = ExtResource("1_e2fdc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=297805187]
+scale = Vector2(10, 10)
+texture = ExtResource("1_oiv3v")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1585500675]
+position = Vector2(-4.75, 5)
+shape = SubResource("RectangleShape2D_2g1xv")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ctq5iq6ywful4"]
+
+[ext_resource type="Texture2D" uid="uid://sfbry0x3c8ud" path="res://rope.png" id="1_0756u"]
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_nmccy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0756u"]
+size = Vector2(16.266668, 11.700012)
+
+[node name="rope" type="Area2D" unique_id=1300395040]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_nmccy")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=808200889]
+position = Vector2(-2.6666687, 0)
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_0756u")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=541291257]
+scale = Vector2(10, 10)
+texture = ExtResource("1_0756u")

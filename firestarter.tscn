@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ob74usd8801x"]
+
+[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_2wkct"]
+[ext_resource type="Texture2D" uid="uid://cm48ug2o7x5sw" path="res://firestarter(notapokemon).png" id="1_assgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_assgj"]
+size = Vector2(161, 160)
+
+[node name="firestarter" type="Area2D" unique_id=670958443]
+scale = Vector2(0.75, 0.75)
+script = ExtResource("1_2wkct")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1520656188]
+scale = Vector2(10, 10)
+texture = ExtResource("1_assgj")
+
+[node name="hitbox" type="CollisionShape2D" parent="." unique_id=1843100299]
+position = Vector2(3, 2)
+shape = SubResource("RectangleShape2D_assgj")
