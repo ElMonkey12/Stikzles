@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3dj0twil1oog"]
 
-[ext_resource type="Script" uid="uid://d0wgtqidnukh4" path="res://plant_sway.torch" id="1_korhu"]
+[ext_resource type="Script" uid="uid://ydu0rbv6vmbh" path="res://draggable.gd" id="1_korhu"]
 [ext_resource type="Texture2D" uid="uid://dpopom61ooigx" path="res://New Piskel-1.png (3)-1.png.png" id="2_korhu"]
 
 [sub_resource type="Animation" id="Animation_korhu"]
@@ -56,5 +56,5 @@ hframes = 2
 vframes = 2
 
 [node name="hitbox" type="CollisionShape2D" parent="." unique_id=1433482378]
-position = Vector2(-4.75, 5)
+position = Vector2(-1, 6)
 shape = SubResource("RectangleShape2D_r0fa0")
