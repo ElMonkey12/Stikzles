@@ -28,3 +28,5 @@ func _process(_delta: float) -> void:
 		var anim: AnimationPlayer = $AnimationPlayer
 		if anim.has_animation("slime_jiggle") and anim.current_animation != "slime_jiggle":
 			anim.play("slime_jiggle")
+		if anim.has_animation("fire_dance") and anim.current_animation != "fire_dance":
+			anim.play("fire_dance")

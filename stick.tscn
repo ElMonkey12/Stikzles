@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yyfslvntnvge"]
 
-[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_1hssm"]
+[ext_resource type="Script" uid="uid://ydu0rbv6vmbh" path="res://draggable.gd" id="1_1hssm"]
 [ext_resource type="Texture2D" uid="uid://brl0bsv5t87pt" path="res://stick.png" id="1_agfe5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_agfe5"]

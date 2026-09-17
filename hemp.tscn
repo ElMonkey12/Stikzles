@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3dj0twil1oog"]
 
-[ext_resource type="Script" uid="uid://m5hi5bo8ad0r" path="res://OneScriptyBoi.torch" id="1_korhu"]
+[ext_resource type="Script" uid="uid://ydu0rbv6vmbh" path="res://draggable.gd" id="1_korhu"]
 [ext_resource type="Texture2D" uid="uid://dpopom61ooigx" path="res://New Piskel-1.png (3)-1.png.png" id="2_korhu"]
 
 [sub_resource type="Animation" id="Animation_korhu"]
