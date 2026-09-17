@@ -80,7 +80,7 @@ position = Vector2(220, 740)
 [obj type="OScriptNodeFunctionEntry" id="OScriptNodeFunctionEntry_dk7h0"]
 function_id = "B1140DF4-06A6-488A-B74B-AA5A684DFE2C"
 id = 5
-position = Vector2(-300, 80)
+position = Vector2(-820, 80)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecOut",
 "dir": 1,
@@ -101,7 +101,7 @@ method = {
 }
 chain = false
 id = 6
-position = Vector2(-220, 260)
+position = Vector2(-360, 260)
 pin_data = Array[Dictionary]([{
 "pin_name": &"target",
 "type": 24,
@@ -125,7 +125,7 @@ right_type = 4
 right_type_name = &"String"
 return_type = 1
 id = 7
-position = Vector2(160, 460)
+position = Vector2(20, 460)
 pin_data = Array[Dictionary]([{
 "pin_name": &"a",
 "type": 4,
@@ -144,7 +144,7 @@ pin_data = Array[Dictionary]([{
 
 [obj type="OScriptNodeBranch" id="OScriptNodeBranch_edg01"]
 id = 8
-position = Vector2(800, 20)
+position = Vector2(660, 20)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 516,
@@ -189,7 +189,7 @@ method = {
 chain = false
 id = 10
 size = Vector2(447, 409)
-position = Vector2(2040, 200)
+position = Vector2(1900, 200)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
@@ -231,7 +231,7 @@ pin_data = Array[Dictionary]([{
 node_path = NodePath("AnimationPlayer")
 target_class_name = "AnimationPlayer"
 id = 11
-position = Vector2(1320, 700)
+position = Vector2(1180, 700)
 pin_data = Array[Dictionary]([{
 "pin_name": &"AnimationPlayer",
 "type": 24,
@@ -259,7 +259,7 @@ pin_data = Array[Dictionary]([{
 
 [obj type="OScriptNodePrintString" id="OScriptNodePrintString_agn03"]
 id = 14
-position = Vector2(1360, 100)
+position = Vector2(1220, 100)
 pin_data = Array[Dictionary]([{
 "pin_name": &"ExecIn",
 "flags": 4
