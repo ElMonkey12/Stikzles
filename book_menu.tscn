@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://oy7cfiqbg4aa"]
+
+[ext_resource type="Texture2D" uid="uid://b3dj0fu7csg7i" path="res://book_menu.png" id="1_e848w"]
+[ext_resource type="PackedScene" uid="uid://djedhklmwh2gf" path="res://X_icon.tscn" id="2_kfae1"]
+
+[node name="book menu" type="RigidBody2D" unique_id=846042045]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1537541858]
+position = Vector2(584.00006, 304)
+scale = Vector2(15, 11.25)
+texture = ExtResource("1_e848w")
+
+[node name="Area2D" parent="." unique_id=1637183023 instance=ExtResource("2_kfae1")]

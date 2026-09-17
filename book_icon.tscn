@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c7py1cp8f0vq7"]
+
+[ext_resource type="Script" uid="uid://cqiduoibf3o1t" path="res://book_icon.gd" id="1_aqrib"]
+[ext_resource type="Texture2D" uid="uid://c2gltjw81ys41" path="res://book.png" id="1_knx8b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqrib"]
+
+[node name="Book icon" type="Area2D" unique_id=1218428372]
+position = Vector2(10, 10)
+scale = Vector2(2, 2)
+script = ExtResource("1_aqrib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=460273106]
+scale = Vector2(2, 2)
+texture = ExtResource("1_knx8b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1122944168]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_aqrib")
