@@ -7,7 +7,10 @@ const flaming_hot := preload("res://campfire.tscn")
 const gold_slime := preload("res://Gold_slime.png")
 const purple_slime := preload("res://Purple_slime_1.png")
 const green_slime := preload("res://slime_sprite.png")
-var Item_count : int = 0
+var Item_count :int= 0
+
+func _on_book_pressed():
+	print("book pressed")
 
 func spawn_slime():
 	var slime_copy = randy_the_slime.instantiate()

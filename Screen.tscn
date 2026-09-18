@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bg2jgy1sopl4h"]
+
+[ext_resource type="Script" uid="uid://dp017n7mtkxdu" path="res://screen.gd" id="1_ce0jw"]
+[ext_resource type="PackedScene" uid="uid://eb82o1mpnl3p" path="res://background_1.tscn" id="2_iep8d"]
+[ext_resource type="AudioStream" uid="uid://2duibiwu2g1a" path="res://My Movie.mp3" id="3_hukda"]
+[ext_resource type="PackedScene" uid="uid://c7py1cp8f0vq7" path="res://book_icon.tscn" id="4_kd2ic"]
+
+[node name="Screen" type="RigidBody2D" unique_id=1656026787]
+script = ExtResource("1_ce0jw")
+
+[node name="background" parent="." unique_id=1346947217 instance=ExtResource("2_iep8d")]
+position = Vector2(-6, -4)
+script = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=610426729]
+stream = ExtResource("3_hukda")
+autoplay = true
+parameters/looping = true
+
+[node name="Book icon" parent="." unique_id=1218428372 instance=ExtResource("4_kd2ic")]
+position = Vector2(41, 38)
