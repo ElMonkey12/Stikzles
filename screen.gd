@@ -7,10 +7,19 @@ const flaming_hot := preload("res://campfire.tscn")
 const gold_slime := preload("res://Gold_slime.png")
 const purple_slime := preload("res://Purple_slime_1.png")
 const green_slime := preload("res://slime_sprite.png")
+const book_menu := preload("res://book_menu.tscn")
+const  X_icon :=preload("res://X_icon.tscn")
+var book_icon 
 var Item_count :int= 0
 
 func _on_book_pressed():
 	print("book pressed")
+	var book_menu_instantiated = book_menu.instantiate()
+	var X_icon_instatiated = X_icon.instantiate()
+	book_icon = get_node("Book icon")
+	remove_child(book_icon)
+	add_child(book_menu_instantiated)
+	add_child(X_icon_instatiated)
 
 func spawn_slime():
 	var slime_copy = randy_the_slime.instantiate()
@@ -62,4 +71,8 @@ func _ready():
 
 
 func _on_name_change() -> void:
+	pass # Replace with function body.
+
+
+func _on_book_icon_book_pressed() -> void:
 	pass # Replace with function body.
