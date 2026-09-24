@@ -8,18 +8,26 @@ const gold_slime := preload("res://Gold_slime.png")
 const purple_slime := preload("res://Purple_slime_1.png")
 const green_slime := preload("res://slime_sprite.png")
 const book_menu := preload("res://book_menu.tscn")
-const  X_icon :=preload("res://X_icon.tscn")
-var book_icon 
+const X_icon :=preload("res://X_icon.tscn")
+@onready var book_icon = get_node("Book icon")
 var Item_count :int= 0
+var book_menu_instantiated = book_menu.instantiate()
+var X_icon_instatiated = X_icon.instantiate()
+var collected_items :Array= []
 
 func _on_book_pressed():
 	print("book pressed")
-	var book_menu_instantiated = book_menu.instantiate()
-	var X_icon_instatiated = X_icon.instantiate()
-	book_icon = get_node("Book icon")
 	remove_child(book_icon)
 	add_child(book_menu_instantiated)
 	add_child(X_icon_instatiated)
+	book_menu_instantiated.z_index = 2
+	X_icon_instatiated.z_index = 2
+	X_icon_instatiated.X_icon_pressed.connect(_on_x_icon_pressed)
+
+func _on_x_icon_pressed():
+	add_child(book_icon)
+	remove_child(book_menu_instantiated)
+	remove_child(X_icon_instatiated)
 
 func spawn_slime():
 	var slime_copy = randy_the_slime.instantiate()
@@ -31,6 +39,7 @@ func spawn_slime():
 	slime_copy.name = "slime_1"
 	print(slime_copy.name)
 	Item_count += 1
+	slime_copy.slime_clicked.connect(_on_slime_clicked)
 
 func litterallywatchinggrassgrow():
 	var hemp_copy = hemptwopoioh.instantiate()
@@ -38,6 +47,7 @@ func litterallywatchinggrassgrow():
 	hemp_copy.global_position = global_position + Vector2((randi() % 1150),(randi() % 720))
 	hemp_copy.name = "hemp"
 	Item_count += 1
+	hemp_copy.hemp_clicked.connect(_on_hemp_clicked)
 
 func brownandsticky():
 	var stick_copy = sticky.instantiate()
@@ -45,6 +55,7 @@ func brownandsticky():
 	stick_copy.global_position = global_position + Vector2((randi() % 1150),(randi() % 720))
 	stick_copy.name = "stick"
 	Item_count += 1
+	stick_copy.stick_clicked.connect(_on_stick_clicked)
 
 func kindling():
 	var campfire_copy = flaming_hot.instantiate()
@@ -53,6 +64,28 @@ func kindling():
 	campfire_copy.name = "campfire"
 	print(campfire_copy.name)
 	Item_count += 1
+	campfire_copy.campfire_clicked.connect(_on_campfire_clicked)
+
+func _on_slime_clicked():
+	if "slime" not in collected_items:
+		collected_items.append("slime")
+	print(collected_items)
+
+func _on_hemp_clicked():
+	if "hemp" not in collected_items:
+		collected_items.append("hemp")
+	print(collected_items)
+
+func _on_stick_clicked():
+	if "stick" not in collected_items:
+		collected_items.append("stick")
+	print(collected_items)
+
+func _on_campfire_clicked():
+	if "campfire" not in collected_items:
+		collected_items.append("campfire")
+	print(collected_items)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -68,11 +101,3 @@ func _ready():
 		brownandsticky()
 		kindling()
 		print(Item_count)
-
-
-func _on_name_change() -> void:
-	pass # Replace with function body.
-
-
-func _on_book_icon_book_pressed() -> void:
-	pass # Replace with function body.
