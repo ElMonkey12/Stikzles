@@ -9,6 +9,7 @@ signal campfire_clicked
 var _dragging := false
 var _drag_offset := Vector2.ZERO
 
+
 # Area2D only calls _input_event for clicks that land on THIS node's
 # collision shape, so we don't have to track mouse-hover ourselves.
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

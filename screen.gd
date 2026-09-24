@@ -14,6 +14,11 @@ var Item_count :int= 0
 var book_menu_instantiated = book_menu.instantiate()
 var X_icon_instatiated = X_icon.instantiate()
 var collected_items :Array= []
+signal menu_relay_2
+signal slime_collected
+signal stick_collected
+signal hemp_collected
+signal campfire_collected
 
 func _on_book_pressed():
 	print("book pressed")
@@ -23,6 +28,20 @@ func _on_book_pressed():
 	book_menu_instantiated.z_index = 2
 	X_icon_instatiated.z_index = 2
 	X_icon_instatiated.X_icon_pressed.connect(_on_x_icon_pressed)
+	book_menu_instantiated.menu_relay.connect(_on_menu_relay)
+
+func _on_menu_relay():
+	print(collected_items)
+	if "slime" in collected_items:
+		slime_collected.emit()
+	if "stick" in collected_items:
+		stick_collected.emit()
+	if "hemp" in collected_items:
+		hemp_collected.emit()
+	if "campfire" in collected_items:
+		campfire_collected.emit()
+
+
 
 func _on_x_icon_pressed():
 	add_child(book_icon)
