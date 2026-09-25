@@ -52,6 +52,11 @@ func spawn_slime():
 	var slime_copy = randy_the_slime.instantiate()
 	add_child(slime_copy)
 	slime_copy.global_position = global_position + Vector2((randi() % 1150),(randi() % 720))
+	var color_rand = (randi()%10)
+	if color_rand < 1:
+		slime_copy.find_child("Sprite2D").texture = gold_slime
+	if color_rand > 0 and color_rand < 4:
+		slime_copy.find_child("Sprite2D").texture = purple_slime
 	var filipe_the_slime = (randi()%2)
 	slime_copy.find_child("Sprite2D").flip_h = (filipe_the_slime == 0)
 	print("Do a flip, ",filipe_the_slime)
@@ -59,6 +64,9 @@ func spawn_slime():
 	print(slime_copy.name)
 	Item_count += 1
 	slime_copy.slime_clicked.connect(_on_slime_clicked)
+	await get_tree().create_timer(randi_range(30,40)).timeout
+	remove_child(slime_copy)
+	Item_count += -1
 
 func litterallywatchinggrassgrow():
 	var hemp_copy = hemptwopoioh.instantiate()
@@ -67,6 +75,9 @@ func litterallywatchinggrassgrow():
 	hemp_copy.name = "hemp"
 	Item_count += 1
 	hemp_copy.hemp_clicked.connect(_on_hemp_clicked)
+	await get_tree().create_timer(randi_range(30,40)).timeout
+	remove_child(hemp_copy)
+	Item_count += -1
 
 func brownandsticky():
 	var stick_copy = sticky.instantiate()
@@ -75,6 +86,9 @@ func brownandsticky():
 	stick_copy.name = "stick"
 	Item_count += 1
 	stick_copy.stick_clicked.connect(_on_stick_clicked)
+	await get_tree().create_timer(randi_range(30,40)).timeout
+	remove_child(stick_copy)
+	Item_count += -1
 
 func kindling():
 	var campfire_copy = flaming_hot.instantiate()
@@ -84,6 +98,9 @@ func kindling():
 	print(campfire_copy.name)
 	Item_count += 1
 	campfire_copy.campfire_clicked.connect(_on_campfire_clicked)
+	await get_tree().create_timer(randi_range(30,40)).timeout
+	remove_child(campfire_copy)
+	Item_count += -1
 
 func _on_slime_clicked():
 	if "slime" not in collected_items:
@@ -113,10 +130,12 @@ func _ready():
 	spawn_slime()
 	kindling()
 	push_error(self.name)
-	while Item_count < 13:
-		await get_tree().create_timer(randi() % 20).timeout
-		spawn_slime()
-		litterallywatchinggrassgrow()
-		brownandsticky()
-		kindling()
-		print(Item_count)
+	while true:
+		await get_tree().create_timer(randi_range(2,20)).timeout
+		if Item_count < 13:
+			spawn_slime()
+			litterallywatchinggrassgrow()
+			brownandsticky()
+			kindling()
+
+	
