@@ -2,7 +2,9 @@ extends Area2D
 ## Attach this script to the Area2D root of any sprite scene
 ## (slime_1, stick, hemp, ...) to make it pick-up-and-drag-able
 ## with the left mouse button.
-signal slime_clicked
+signal green_slime_clicked
+signal purple_slime_clicked
+signal gold_slime_clicked
 signal stick_clicked
 signal hemp_clicked
 signal campfire_clicked
@@ -14,8 +16,12 @@ var _drag_offset := Vector2.ZERO
 # collision shape, so we don't have to track mouse-hover ourselves.
 func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("left_click"):
-		if "slime" in name:
-			slime_clicked.emit()
+		if "green_slime" in name:
+			green_slime_clicked.emit()
+		if "purple_slime" in name:
+			purple_slime_clicked.emit()
+		if "gold_slime" in name:
+			gold_slime_clicked.emit()
 		if "stick" in name:
 			stick_clicked.emit()
 		if "hemp" in name:

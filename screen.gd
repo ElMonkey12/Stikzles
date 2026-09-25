@@ -55,15 +55,20 @@ func spawn_slime():
 	var color_rand = (randi()%10)
 	if color_rand < 1:
 		slime_copy.find_child("Sprite2D").texture = gold_slime
+		slime_copy.name = "gold_slime"
 	if color_rand > 0 and color_rand < 4:
 		slime_copy.find_child("Sprite2D").texture = purple_slime
+		slime_copy.name = "purple_slime"
+	if color_rand > 3:
+		slime_copy.name = "green_slime"
 	var filipe_the_slime = (randi()%2)
 	slime_copy.find_child("Sprite2D").flip_h = (filipe_the_slime == 0)
 	print("Do a flip, ",filipe_the_slime)
-	slime_copy.name = "slime_1"
 	print(slime_copy.name)
 	Item_count += 1
-	slime_copy.slime_clicked.connect(_on_slime_clicked)
+	slime_copy.green_slime_clicked.connect(_on_green_slime_clicked)
+	slime_copy.purple_slime_clicked.connect(_on_purple_slime_clicked)
+	slime_copy.gold_slime_clicked.connect(_on_gold_slime_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(slime_copy)
 	Item_count += -1
@@ -102,9 +107,19 @@ func kindling():
 	remove_child(campfire_copy)
 	Item_count += -1
 
-func _on_slime_clicked():
-	if "slime" not in collected_items:
-		collected_items.append("slime")
+func _on_green_slime_clicked():
+	if "green_slime" not in collected_items:
+		collected_items.append("green_slime")
+	print(collected_items)
+
+func _on_purple_slime_clicked():
+	if "purple_slime" not in collected_items:
+		collected_items.append("purple_slime")
+	print(collected_items)
+
+func _on_gold_slime_clicked():
+	if "gold_slime" not in collected_items:
+		collected_items.append("gold_slime")
 	print(collected_items)
 
 func _on_hemp_clicked():
