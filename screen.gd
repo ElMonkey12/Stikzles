@@ -14,40 +14,24 @@ var Item_count :int= 0
 var book_menu_instantiated = book_menu.instantiate()
 var X_icon_instatiated = X_icon.instantiate()
 var collected_items :Array= []
-signal green_slime_collected
-signal purple_slime_collected
-signal gold_slime_collected
-signal stick_collected
-signal hemp_collected
-signal campfire_collected
 
 func _on_book_pressed():
 	print("book pressed")
 	remove_child(book_icon)
-	add_child(book_menu_instantiated)
 	add_child(X_icon_instatiated)
+	book_menu_instantiated.find_child("Sprite2D").show()
 	book_menu_instantiated.z_index = 2
 	X_icon_instatiated.z_index = 2
 	X_icon_instatiated.X_icon_pressed.connect(_on_x_icon_pressed)
-	#book_menu_instantiated.menu_relay.connect(_on_menu_relay)
-
-#func _on_menu_relay():
-	#print(collected_items)
-	#if "slime" in collected_items:
-		#slime_collected.emit()
-	#if "stick" in collected_items:
-		#stick_collected.emit()
-	#if "hemp" in collected_items:
-		#hemp_collected.emit()
-	#if "campfire" in collected_items:
-		#campfire_collected.emit()
-
-
+	for x in collected_items:
+		book_menu_instantiated.find_child(x).show()
 
 func _on_x_icon_pressed():
 	add_child(book_icon)
-	remove_child(book_menu_instantiated)
+	book_menu_instantiated.find_child("Sprite2D").hide()
 	remove_child(X_icon_instatiated)
+	for x in collected_items:
+		book_menu_instantiated.find_child(x).hide()
 
 func spawn_slime():
 	var slime_copy = randy_the_slime.instantiate()
@@ -111,42 +95,39 @@ func kindling():
 func _on_green_slime_clicked():
 	if "green_slime" not in collected_items:
 		collected_items.append("green_slime")
-		green_slime_collected.emit()
 	print(collected_items)
 
 func _on_purple_slime_clicked():
 	if "purple_slime" not in collected_items:
 		collected_items.append("purple_slime")
 	print(collected_items)
-	purple_slime_collected.emit()
 
 func _on_gold_slime_clicked():
 	if "gold_slime" not in collected_items:
 		collected_items.append("gold_slime")
 	print(collected_items)
-	gold_slime_collected.emit()
 
 func _on_hemp_clicked():
 	if "hemp" not in collected_items:
 		collected_items.append("hemp")
 	print(collected_items)
-	hemp_collected.emit()
 
 func _on_stick_clicked():
 	if "stick" not in collected_items:
 		collected_items.append("stick")
 	print(collected_items)
-	stick_collected.emit()
 
 func _on_campfire_clicked():
 	if "campfire" not in collected_items:
 		collected_items.append("campfire")
 	print(collected_items)
-	campfire_collected.emit()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_child(book_menu_instantiated)
+	for x in book_menu_instantiated.get_children():
+		x.hide()
 	litterallywatchinggrassgrow()
 	brownandsticky()
 	spawn_slime()
