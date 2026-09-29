@@ -5,7 +5,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87fwq"]
 
-[node name="Area2D" type="Area2D" unique_id=1637183023]
+[node name="X_icon" type="Area2D" unique_id=1637183023]
 position = Vector2(40, 40)
 scale = Vector2(2, 2)
 script = ExtResource("1_87fwq")

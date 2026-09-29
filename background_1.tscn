@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dy1h354sgpnw3" path="res://background_1.gd" id="1_qn0ad"]
 [ext_resource type="Texture2D" uid="uid://ckhivtggv5osr" path="res://background_grasslands.png" id="2_qn0ad"]
-[ext_resource type="PackedScene" uid="uid://c7py1cp8f0vq7" path="res://book_icon.tscn" id="3_4mx25"]
 
 [node name="background" type="RigidBody2D" unique_id=114092859]
 script = ExtResource("1_qn0ad")
@@ -11,6 +10,3 @@ script = ExtResource("1_qn0ad")
 position = Vector2(583.5, 324.99997)
 scale = Vector2(18.046875, 10.031251)
 texture = ExtResource("2_qn0ad")
-
-[node name="Book icon" parent="." unique_id=1218428372 instance=ExtResource("3_4mx25")]
-position = Vector2(49, 47)
