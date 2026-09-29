@@ -14,8 +14,9 @@ var Item_count :int= 0
 var book_menu_instantiated = book_menu.instantiate()
 var X_icon_instatiated = X_icon.instantiate()
 var collected_items :Array= []
-signal menu_relay_2
-signal slime_collected
+signal green_slime_collected
+signal purple_slime_collected
+signal gold_slime_collected
 signal stick_collected
 signal hemp_collected
 signal campfire_collected
@@ -28,18 +29,18 @@ func _on_book_pressed():
 	book_menu_instantiated.z_index = 2
 	X_icon_instatiated.z_index = 2
 	X_icon_instatiated.X_icon_pressed.connect(_on_x_icon_pressed)
-	book_menu_instantiated.menu_relay.connect(_on_menu_relay)
+	#book_menu_instantiated.menu_relay.connect(_on_menu_relay)
 
-func _on_menu_relay():
-	print(collected_items)
-	if "slime" in collected_items:
-		slime_collected.emit()
-	if "stick" in collected_items:
-		stick_collected.emit()
-	if "hemp" in collected_items:
-		hemp_collected.emit()
-	if "campfire" in collected_items:
-		campfire_collected.emit()
+#func _on_menu_relay():
+	#print(collected_items)
+	#if "slime" in collected_items:
+		#slime_collected.emit()
+	#if "stick" in collected_items:
+		#stick_collected.emit()
+	#if "hemp" in collected_items:
+		#hemp_collected.emit()
+	#if "campfire" in collected_items:
+		#campfire_collected.emit()
 
 
 
@@ -71,7 +72,7 @@ func spawn_slime():
 	slime_copy.gold_slime_clicked.connect(_on_gold_slime_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(slime_copy)
-	Item_count += -1
+	Item_count -= 1
 
 func litterallywatchinggrassgrow():
 	var hemp_copy = hemptwopoioh.instantiate()
@@ -82,7 +83,7 @@ func litterallywatchinggrassgrow():
 	hemp_copy.hemp_clicked.connect(_on_hemp_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(hemp_copy)
-	Item_count += -1
+	Item_count -= 1
 
 func brownandsticky():
 	var stick_copy = sticky.instantiate()
@@ -93,7 +94,7 @@ func brownandsticky():
 	stick_copy.stick_clicked.connect(_on_stick_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(stick_copy)
-	Item_count += -1
+	Item_count -= +1
 
 func kindling():
 	var campfire_copy = flaming_hot.instantiate()
@@ -105,37 +106,43 @@ func kindling():
 	campfire_copy.campfire_clicked.connect(_on_campfire_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(campfire_copy)
-	Item_count += -1
+	Item_count -= 1
 
 func _on_green_slime_clicked():
 	if "green_slime" not in collected_items:
 		collected_items.append("green_slime")
+		green_slime_collected.emit()
 	print(collected_items)
 
 func _on_purple_slime_clicked():
 	if "purple_slime" not in collected_items:
 		collected_items.append("purple_slime")
 	print(collected_items)
+	purple_slime_collected.emit()
 
 func _on_gold_slime_clicked():
 	if "gold_slime" not in collected_items:
 		collected_items.append("gold_slime")
 	print(collected_items)
+	gold_slime_collected.emit()
 
 func _on_hemp_clicked():
 	if "hemp" not in collected_items:
 		collected_items.append("hemp")
 	print(collected_items)
+	hemp_collected.emit()
 
 func _on_stick_clicked():
 	if "stick" not in collected_items:
 		collected_items.append("stick")
 	print(collected_items)
+	stick_collected.emit()
 
 func _on_campfire_clicked():
 	if "campfire" not in collected_items:
 		collected_items.append("campfire")
 	print(collected_items)
+	campfire_collected.emit()
 
 
 # Called when the node enters the scene tree for the first time.
