@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds5m61fkq4qx8"
-path="res://.godot/imported/New Piskel-1.png (7) (1).png-093c8070c2718332d6341979b513eca5.ctex"
+uid="uid://dsley2gc26ibp"
+path="res://.godot/imported/blue campfire.png-59b2dc3c15f513521df21530a869fb2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel-1.png (7) (1).png"
-dest_files=["res://.godot/imported/New Piskel-1.png (7) (1).png-093c8070c2718332d6341979b513eca5.ctex"]
+source_file="res://addons/blue campfire.png"
+dest_files=["res://.godot/imported/blue campfire.png-59b2dc3c15f513521df21530a869fb2e.ctex"]
 
 [params]
 

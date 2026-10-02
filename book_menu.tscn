@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bs4heu3vel2qh" path="res://Gold_slime.png" id="5_3ydqq"]
 [ext_resource type="Texture2D" uid="uid://brl0bsv5t87pt" path="res://stick.png" id="6_t0t2t"]
 [ext_resource type="Texture2D" uid="uid://dpopom61ooigx" path="res://New Piskel-1.png (3)-1.png.png" id="7_8h0sw"]
-[ext_resource type="Texture2D" uid="uid://ds5m61fkq4qx8" path="res://New Piskel-1.png (7) (1).png" id="8_2dpb6"]
+[ext_resource type="Texture2D" uid="uid://ds5m61fkq4qx8" path="res://fire.png" id="8_2dpb6"]
+[ext_resource type="Texture2D" uid="uid://b0r2376m72svu" path="res://blue campfire.png" id="8_fxwr3"]
 
 [node name="book menu" type="RigidBody2D" unique_id=846042045]
 
@@ -53,10 +54,18 @@ texture = ExtResource("7_8h0sw")
 hframes = 2
 vframes = 2
 
-[node name="campfire" type="Sprite2D" parent="." unique_id=1413090094]
+[node name="red_campfire" type="Sprite2D" parent="." unique_id=1413090094]
 visible = false
-position = Vector2(881, 281)
+position = Vector2(873.00006, 201)
 scale = Vector2(6, 6)
 texture = ExtResource("8_2dpb6")
+hframes = 2
+vframes = 2
+
+[node name="blue_campfire" type="Sprite2D" parent="." unique_id=1671375571]
+visible = false
+position = Vector2(894, 381)
+scale = Vector2(6, 6)
+texture = ExtResource("8_fxwr3")
 hframes = 2
 vframes = 2

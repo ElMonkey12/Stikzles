@@ -7,7 +7,8 @@ signal purple_slime_clicked
 signal gold_slime_clicked
 signal stick_clicked
 signal hemp_clicked
-signal campfire_clicked
+signal red_campfire_clicked
+signal blue_campfire_clicked
 var _dragging := false
 var _drag_offset := Vector2.ZERO
 
@@ -26,8 +27,10 @@ func _input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 			stick_clicked.emit()
 		if "hemp" in name:
 			hemp_clicked.emit()
-		if "campfire" in name:
-			campfire_clicked.emit()
+		if "red_campfire" in name:
+			red_campfire_clicked.emit()
+		if "blue_campfire" in name:
+			blue_campfire_clicked.emit()
 		_dragging = true
 		_drag_offset = global_position - get_global_mouse_position()
 		z_index = 1 # draw whatever we're holding above everything else

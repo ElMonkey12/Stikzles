@@ -4,6 +4,8 @@ const randy_the_slime := preload("res://slime_1.tscn")
 const hemptwopoioh := preload("res://hemp.tscn")
 const sticky := preload("res://stick.tscn")
 const flaming_hot := preload("res://campfire.tscn")
+const red_fire := preload("res://fire.png")
+const blue_fire := preload("res://blue campfire.png")
 const gold_slime := preload("res://Gold_slime.png")
 const purple_slime := preload("res://Purple_slime_1.png")
 const green_slime := preload("res://slime_sprite.png")
@@ -84,10 +86,16 @@ func kindling():
 	var campfire_copy = flaming_hot.instantiate()
 	add_child(campfire_copy)
 	campfire_copy.global_position = global_position + Vector2((randi() % 1150),(randi() % 720))
-	campfire_copy.name = "campfire"
+	var fire_rand = (randi()%5)
+	if fire_rand < 2:
+		campfire_copy.find_child("Sprite2D").texture = blue_fire
+		campfire_copy.name = "blue_campfire"
+	else:
+		campfire_copy.name = "red_campfire"
 	print(campfire_copy.name)
 	Item_count += 1
-	campfire_copy.campfire_clicked.connect(_on_campfire_clicked)
+	campfire_copy.red_campfire_clicked.connect(_on_red_campfire_clicked)
+	campfire_copy.blue_campfire_clicked.connect(_on_blue_campfire_clicked)
 	await get_tree().create_timer(randi_range(30,40)).timeout
 	remove_child(campfire_copy)
 	Item_count -= 1
@@ -117,9 +125,14 @@ func _on_stick_clicked():
 		collected_items.append("stick")
 	print(collected_items)
 
-func _on_campfire_clicked():
-	if "campfire" not in collected_items:
-		collected_items.append("campfire")
+func _on_red_campfire_clicked():
+	if "red_campfire" not in collected_items:
+		collected_items.append("red_campfire")
+	print(collected_items)
+
+func _on_blue_campfire_clicked():
+	if "blue_campfire" not in collected_items:
+		collected_items.append("blue_campfire")
 	print(collected_items)
 
 
